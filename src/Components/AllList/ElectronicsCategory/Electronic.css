@@ -1,0 +1,10 @@
+.collection-card {
+  height: 350px;
+  min-height: 350px;
+  /* box-shadow: 5px 5px 10px salmon; */
+}
+
+.collection-img {
+  height: 250px;
+  min-height: 250px;
+}

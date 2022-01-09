@@ -1,0 +1,22 @@
+/* .furnitures {
+  background-image: url("../../../Images/sofa.jpg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  min-height: 400px;
+} */
+
+.furniture-container {
+  overflow: hidden;
+}
+
+.bullet li {
+  list-style: none;
+}
+
+.bullet li:before {
+  margin-right: 15px;
+  content: "\22A0";
+  color: rgb(185, 74, 74);
+}
