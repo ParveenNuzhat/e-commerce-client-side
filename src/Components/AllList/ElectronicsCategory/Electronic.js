@@ -55,7 +55,7 @@ const Electronic = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticdetails/${_id}`}
+                to={`electronicdetails/${_id}`}
               >
                 <button className="btn btn-info ">
                   <i
@@ -73,7 +73,7 @@ const Electronic = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticOrder/${_id}`}
+                to={`electronicsOrder/${_id}`}
               >
                 <button className="btn btn-success ">
                   <i
@@ -87,7 +87,7 @@ const Electronic = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticdetails/${_id}`}
+                to={`electronicdetails/${_id}`}
               >
                 <button className="btn btn-info ">
                   <i
