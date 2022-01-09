@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Category.css";
 import {
@@ -6,12 +6,29 @@ import {
   useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { Container } from "react-bootstrap";
+import useAuth from "../../../Hook/useAuth"
 
 const Category = (props) => {
   const history = useHistory();
+  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth()
 
   const { _id, name, image } = props.category;
   const { handleDelete } = props;
+  useEffect(() => {
+    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data[0]?.role === "admin") {
+          setIsAdmin("admin");
+        } else {
+          setIsAdmin("user");
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [user?.email]);
   const handleAllProducts = () => {
     if (name == "Electronics") {
       const url = "/electronics";
@@ -52,48 +69,80 @@ const Category = (props) => {
               {name}
             </h4>
           </div>
-          <div class="card-footer bg-transparent border-success d-flex justify-content-between">
-            <Link
-              style={{ textDecoration: "none" }}
-              className="link d-flex justify-content-center"
-            >
-              <button
-                onClick={() => handleDelete(_id)}
-                className="btn btn-danger"
-                style={{ border: "none", backgroundColor: "salmon" }}
-              >
-                <i
-                  style={{ color: "red", fontSize: "20px" }}
-                  class="fa fa-cart-plus"
-                ></i>
-                <span className="px-1" style={{ fontWeight: "bold" }}>
-                  {" "}
-                  DELETE
-                </span>
-              </button>
-            </Link>
+          <div >
 
-            <Link
-              style={{ textDecoration: "none" }}
-              className="link d-flex justify-content-center"
-              onClick={handleAllProducts}
-            >
-              <button
-                className="btn btn-info"
-                style={{ backgroundColor: "#585858", border: "none" }}
-              >
-                <i
-                  style={{ color: "red", fontSize: "20px" }}
-                  class="fa fa-cart-plus"
-                ></i>
-                <span
-                  className="px-1"
-                  style={{ color: "white", fontWeight: "bold" }}
+
+
+            {isAdmin === "admin" && (
+              <div class="card-footer bg-transparent border-success d-flex justify-content-between">
+                <Link
+                  style={{ textDecoration: "none" }}
+                  className="link d-flex justify-content-center"
                 >
-                  COLLECTION
-                </span>
-              </button>
-            </Link>
+                  <button
+                    onClick={() => handleDelete(_id)}
+                    className="btn btn-danger"
+                    style={{ border: "none", backgroundColor: "salmon" }}
+                  >
+                    <i
+                      style={{ color: "red", fontSize: "20px" }}
+                      class="fa fa-cart-plus"
+                    ></i>
+                    <span className="px-1" style={{ fontWeight: "bold" }}>
+                      {" "}
+                      DELETE
+                    </span>
+                  </button>
+                </Link>
+
+
+                <Link
+                  style={{ textDecoration: "none" }}
+                  className="link d-flex justify-content-center"
+                  onClick={handleAllProducts}
+                >
+                  <button
+                    className="btn btn-info"
+                    style={{ backgroundColor: "#585858", border: "none" }}
+                  >
+                    <i
+                      style={{ color: "red", fontSize: "20px" }}
+                      class="fa fa-cart-plus"
+                    ></i>
+                    <span
+                      className="px-1"
+                      style={{ color: "white", fontWeight: "bold" }}
+                    >
+                      COLLECTION
+                    </span>
+                  </button>
+                </Link>
+              </div>
+
+            )}
+            {isAdmin === "user" && (
+              <Link
+                style={{ textDecoration: "none" }}
+                className="link d-flex justify-content-center"
+                onClick={handleAllProducts}
+              >
+                <button
+                  className="btn btn-info"
+                  style={{ backgroundColor: "#585858", border: "none" }}
+                >
+                  <i
+                    style={{ color: "red", fontSize: "20px" }}
+                    class="fa fa-cart-plus"
+                  ></i>
+                  <span
+                    className="px-1"
+                    style={{ color: "white", fontWeight: "bold" }}
+                  >
+                    COLLECTION
+                  </span>
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </Container>

@@ -14,9 +14,12 @@ import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
+  const [searchText, setSearchText] = useState('');
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isAdmin, setIsAdmin] = useState('');
+  const [totalPrice, setTotalPrice] = useState();
+  const [processing, setProcessing] = useState(false)
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -97,7 +100,10 @@ const useFirebase = () => {
     updateName,
     hanldeUserInfoRegister,
     isAdmin,
-    setIsAdmin
+    setIsAdmin,
+    totalPrice, setTotalPrice,
+    processing, setProcessing,
+    searchText, setSearchText
   };
 };
 
