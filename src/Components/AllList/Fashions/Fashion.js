@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Fashion.css";
+import useAuth from "../../../Hook/useAuth"
 
 const Fashion = (props) => {
   const { _id, name, image, price, feature } = props.fashion;
   const { handleDelete } = props;
+  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth()
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data[0]?.role === "admin") {
+          setIsAdmin("admin");
+        } else {
+          setIsAdmin("user");
+        }
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [user?.email]);
   return (
     <div>
       <div className="col">
@@ -20,50 +38,71 @@ const Fashion = (props) => {
             <img src={image} alt="" className="fashion-img img-fluid p-2" />
           </div>
 
-          <div className="card-footer bg-transparent border-success d-flex justify-content-between px-5 py-3 border-0">
-            <Link
-              style={{ textDecoration: "none" }}
-              className="link d-flex justify-content-center"
-            >
-              <button
-                onClick={() => handleDelete(_id)}
-                className="btn btn-danger"
+          {
+            isAdmin === "admin" &&
+            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3">
+              <Link
+                style={{ textDecoration: "none" }}
+                className="link d-flex justify-content-center"
               >
-                <i
-                  style={{ color: "red", fontSize: "20px" }}
-                  class="fa fa-cart-plus"
-                ></i>
-                <span className="">DELETE</span>
-              </button>
-            </Link>
-            <Link
-              style={{ textDecoration: "none" }}
-              className="link d-flex justify-content-center"
-              to={`fashionsOrder/${_id}`}
-            >
-              <button className="btn btn-success ">
-                <i
-                  style={{ color: "red", fontSize: "20px" }}
-                  class="fa fa-cart-plus"
-                ></i>
-                <span className="">ORDER</span>
-              </button>
-            </Link>
+                <button
+                  onClick={() => handleDelete(_id)}
+                  className="btn btn-danger"
+                >
+                  <i
+                    style={{ color: "red", fontSize: "20px" }}
+                    class="fa fa-cart-plus"
+                  ></i>
+                  <span className="ps-1"> DELETE</span>
+                </button>
+              </Link>
+              <Link
+                style={{ textDecoration: "none" }}
+                className="link d-flex justify-content-center"
+                to={`cosmeticdetails/${_id}`}
+              >
+                <button className="btn btn-info ">
+                  <i
+                    style={{ color: "red", fontSize: "20px" }}
+                    class="fa fa-cart-plus"
+                  ></i>
+                  <span className="ps-1">Details</span>
+                </button>
+              </Link>
+            </div>
+          }
+          {isAdmin === "user" &&
+            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3">
 
-            <Link
-              style={{ textDecoration: "none" }}
-              className="link d-flex justify-content-center"
-              to={`fashiondetails/${_id}`}
-            >
-              <button className="btn btn-info ">
-                <i
-                  style={{ color: "red", fontSize: "20px" }}
-                  class="fa fa-cart-plus"
-                ></i>
-                <span className="">Details</span>
-              </button>
-            </Link>
-          </div>
+              <Link
+                style={{ textDecoration: "none" }}
+                className="link d-flex justify-content-center"
+                to={`cosmeticOrder/${_id}`}
+              >
+                <button className="btn btn-success ">
+                  <i
+                    style={{ color: "red", fontSize: "20px" }}
+                    class="fa fa-cart-plus"
+                  ></i>
+                  <span className="ps-1"> ORDER</span>
+                </button>
+              </Link>
+
+              <Link
+                style={{ textDecoration: "none" }}
+                className="link d-flex justify-content-center"
+                to={`cosmeticdetails/${_id}`}
+              >
+                <button className="btn btn-info ">
+                  <i
+                    style={{ color: "red", fontSize: "20px" }}
+                    class="fa fa-cart-plus"
+                  ></i>
+                  <span className="ps-1">Details</span>
+                </button>
+              </Link>
+            </div>
+          }
         </div>
       </div>
     </div>

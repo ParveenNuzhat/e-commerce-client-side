@@ -38,8 +38,11 @@ import CosmeticOrders from "./Components/AllOrders/CosmeticsOrders/CosmeticOrder
 import ManageOrders from "./Components/AllOrders/ManageOrders/ManageOrders";
 import Footer from "./Components/Footer/Footer";
 import Navigation from "./Components/Navigation/Navigation";
-import SearchBar from "./Components/SearchBar/SearchBar";
-// import SearchResult from "./Components/SearchResult/SearchResult";
+
+import Payment from "./Components/AllOrders/MyOrders/Payment"
+
+import SearchProducts from "./Components/SearchBar/SearchProducts";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute"
 
 function App() {
   return (
@@ -83,9 +86,9 @@ function App() {
           <Route path="/addSport">
             <AddSport></AddSport>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <DashBoard></DashBoard>
-          </Route>
+          </PrivateRoute>
           <Route path="/addFashion">
             <AddFashion></AddFashion>
           </Route>
@@ -101,6 +104,9 @@ function App() {
           </Route>
           <Route exact path="/customer">
             <CustomerCare></CustomerCare>
+          </Route>
+          <Route path="/pay">
+            <Payment></Payment>
           </Route>
           <Route exact path="/register">
             <Register></Register>
@@ -143,9 +149,9 @@ function App() {
           <Route path="/furnitureOrder/:_id">
             <FurnitureOrders></FurnitureOrders>
           </Route>
-          {/* <Route path="/searchResult">
-            <SearchResult></SearchResult>
-          </Route> */}
+          <Route path="/searchResult">
+            <SearchProducts></SearchProducts>
+          </Route>
 
           <Route path="*">
             <NotFound></NotFound>
