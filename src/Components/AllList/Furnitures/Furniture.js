@@ -60,7 +60,7 @@ const Furniture = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticdetails/${_id}`}
+                to={`furnituredetails/${_id}`}
               >
                 <button className="btn btn-info ">
                   <i
@@ -78,7 +78,7 @@ const Furniture = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticOrder/${_id}`}
+                to={`furnitureOrder/${_id}`}
               >
                 <button className="btn btn-success ">
                   <i
@@ -92,7 +92,7 @@ const Furniture = (props) => {
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
-                to={`cosmeticdetails/${_id}`}
+                to={`furnituredetails/${_id}`}
               >
                 <button className="btn btn-info ">
                   <i
