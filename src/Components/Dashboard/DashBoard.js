@@ -12,6 +12,11 @@ import AddFurniture from "../AddComponents/AddFurniture/AddFurniture";
 import AddSport from "../AddComponents/AddSport/AddSport";
 import ManageOrders from "../AllOrders/ManageOrders/ManageOrders";
 import MyOrders from "../AllOrders/MyOrders/MyOrders";
+import Electronics from "../AllList/ElectronicsCategory/Electronics";
+import Sports from "../AllList/SportsCategory/Sports";
+import Cosmetics from "../AllList/Cosmetics/Cosmetics";
+import Fashions from "../AllList/Fashions/Fashions";
+import Furnitures from "../AllList/Furnitures/Furnitures"
 
 import "./Dashboard.css";
 
@@ -85,6 +90,21 @@ const Dashboard = () => {
                   <Nav.Link as={Link} to={`${url}/manageorders`}>
                     Manage All Orders
                   </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/electronics`}>
+                    Electronics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/sports`}>
+                    Sports
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/cosmetics`}>
+                    Cosmetics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/fashions`}>
+                    Fashions
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/furnitures`}>
+                    Furnitures
+                  </Nav.Link>
 
                   <Nav.Link
                     role="button"
@@ -99,6 +119,21 @@ const Dashboard = () => {
                 <div>
                   <Nav.Link as={Link} to={`${url}/myOrders`}>
                     My Orders
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/electronics`}>
+                    Electronics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/sports`}>
+                    Sports
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/cosmetics`}>
+                    Cosmetics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/fashions`}>
+                    Fashions
+                  </Nav.Link>
+                  <Nav.Link as={Link} to={`${url}/furnitures`}>
+                    Furnitures
                   </Nav.Link>
 
                   <Nav.Link
@@ -139,12 +174,46 @@ const Dashboard = () => {
                   <Route path={`${path}/manageorders`}>
                     <ManageOrders></ManageOrders>
                   </Route>
+                  <Route path={`${path}/electronics`}>
+                    <Electronics></Electronics>
+                  </Route>
+                  <Route path={`${path}/sports`}>
+                    <Sports></Sports>
+                  </Route>
+                  <Route path={`${path}/cosmetics`}>
+                    <Cosmetics></Cosmetics>
+                  </Route>
+                  <Route path={`${path}/fashions`}>
+                    <Fashions></Fashions>
+                  </Route>
+                  <Route path={`${path}/furnitures`}>
+                    <Furnitures></Furnitures>
+                  </Route>
                 </div>
               )}
               {isAdmin === "user" && (
-                <Route path={`${path}/myOrders`}>
-                  <MyOrders></MyOrders>
-                </Route>
+                <div>
+                  <Route path={`${path}/myOrders`}>
+                    <MyOrders></MyOrders>
+                  </Route>
+                  <Route path={`${path}/electronics`}>
+                    <Electronics></Electronics>
+                  </Route>
+                  <Route path={`${path}/sports`}>
+                    <Sports></Sports>
+                  </Route>
+                  <Route path={`${path}/cosmetics`}>
+                    <Cosmetics></Cosmetics>
+                  </Route>
+                  <Route path={`${path}/fashions`}>
+                    <Fashions></Fashions>
+                  </Route>
+                  <Route path={`${path}/furnitures`}>
+                    <Furnitures></Furnitures>
+                  </Route>
+
+                </div>
+
               )}
             </Switch>
           </Col>

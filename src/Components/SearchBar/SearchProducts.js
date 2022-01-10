@@ -39,8 +39,10 @@ const SearchProducts = () => {
             });
     }, []);
 
-    const result = APIData.filter(data => (data.name.toLowerCase() == searchText.toLowerCase()))
+
+    const result = APIData.filter(data => (data.name.toLowerCase().includes(searchText.toLowerCase())))
     console.log(result)
+
     if (result.length === 0) {
         return (
             <div className='d-flex justify-content-center mt-5'>

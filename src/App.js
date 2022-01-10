@@ -56,58 +56,58 @@ function App() {
           <Route exact path="/home">
             <Home></Home>
           </Route>
-          <Route path="/addcategory">
+          <PrivateRoute path="/addcategory">
             <AddCategory></AddCategory>
-          </Route>
-          <Route path="/addCosmetic">
+          </PrivateRoute>
+          <PrivateRoute path="/addCosmetic">
             <AddCosmetic></AddCosmetic>
-          </Route>
-          <Route path="/cosmetics">
+          </PrivateRoute>
+          <PrivateRoute path="/cosmetics">
             <Cosmetics></Cosmetics>
-          </Route>
-          <Route path="/shop">
+          </PrivateRoute>
+          <PrivateRoute path="/shop">
             <Categories></Categories>
-          </Route>
-          <Route path="/electronics">
+          </PrivateRoute>
+          <PrivateRoute path="/electronics">
             <Electronics></Electronics>
-          </Route>
-          <Route path="/sports">
+          </PrivateRoute>
+          <PrivateRoute path="/sports">
             <Sports></Sports>
-          </Route>
-          <Route path="/furnitures">
+          </PrivateRoute>
+          <PrivateRoute path="/furnitures">
             <Furnitures></Furnitures>
-          </Route>
-          <Route path="/fashions">
+          </PrivateRoute>
+          <PrivateRoute path="/fashions">
             <Fashions></Fashions>
-          </Route>
-          <Route path="/addElectronic">
+          </PrivateRoute>
+          <PrivateRoute path="/addElectronic">
             <AddElectronic></AddElectronic>
-          </Route>
-          <Route path="/addSport">
+          </PrivateRoute>
+          <PrivateRoute path="/addSport">
             <AddSport></AddSport>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute path="/dashboard">
             <DashBoard></DashBoard>
           </PrivateRoute>
-          <Route path="/addFashion">
+          <PrivateRoute path="/addFashion">
             <AddFashion></AddFashion>
-          </Route>
-          <Route path="/addFurniture">
+          </PrivateRoute>
+          <PrivateRoute path="/addFurniture">
             <AddFurniture></AddFurniture>
-          </Route>
-          <Route path="/myOrders">
+          </PrivateRoute>
+          <PrivateRoute path="/myOrders">
             <MyOrders></MyOrders>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/allproducts">
+          <PrivateRoute path="/allproducts">
             <AllProducts></AllProducts>
-          </Route>
-          <Route exact path="/customer">
+          </PrivateRoute>
+          <PrivateRoute exact path="/customer">
             <CustomerCare></CustomerCare>
-          </Route>
-          <Route path="/pay">
+          </PrivateRoute>
+          <PrivateRoute path="/pay">
             <Payment></Payment>
-          </Route>
+          </PrivateRoute>
           <Route exact path="/register">
             <Register></Register>
           </Route>
@@ -134,21 +134,21 @@ function App() {
             <CosmeticDetails></CosmeticDetails>
           </Route>
 
-          <Route path="/electronicsOrder/:_id">
+          <PrivateRoute path="/electronicsOrder/:_id">
             <ElectricOrders></ElectricOrders>
-          </Route>
-          <Route path="/sportsOrder/:_id">
+          </PrivateRoute>
+          <PrivateRoute path="/sportsOrder/:_id">
             <SportsOrder></SportsOrder>
-          </Route>
-          <Route path="/cosmeticOrder/:_id">
+          </PrivateRoute>
+          <PrivateRoute path="/cosmeticOrder/:_id">
             <CosmeticOrders></CosmeticOrders>
-          </Route>
-          <Route path="/fashionsOrder/:_id">
+          </PrivateRoute>
+          <PrivateRoute path="/fashionsOrder/:_id">
             <FashionOrders></FashionOrders>
-          </Route>
-          <Route path="/furnitureOrder/:_id">
+          </PrivateRoute>
+          <PrivateRoute path="/furnitureOrder/:_id">
             <FurnitureOrders></FurnitureOrders>
-          </Route>
+          </PrivateRoute>
           <Route path="/searchResult">
             <SearchProducts></SearchProducts>
           </Route>

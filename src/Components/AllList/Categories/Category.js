@@ -130,10 +130,7 @@ const Category = (props) => {
                   className="btn btn-info"
                   style={{ backgroundColor: "#585858", border: "none" }}
                 >
-                  <i
-                    style={{ color: "red", fontSize: "20px" }}
-                    class="fa fa-cart-plus"
-                  ></i>
+
                   <span
                     className="px-1"
                     style={{ color: "white", fontWeight: "bold" }}

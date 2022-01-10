@@ -62,7 +62,8 @@ const MyOrder = () => {
   }
 
   const myOrder = allOrders.filter(order => (order.userEmail == user.email))
-  const total = ((myOrder.reduce((a, v) => a = a + v.price, 0)))
+
+  const total = ((myOrder.reduce((a, v) => a = a + parseFloat(v.price), 0)))
   const handlePay = () => {
     setTotalPrice(total)
   }

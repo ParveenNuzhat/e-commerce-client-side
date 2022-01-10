@@ -73,6 +73,11 @@ const Footer = () => {
         </div>
         <hr />
         <p className="text-center pt-3">&copy; 2021 All rights reserved.</p>
+        <div className="d-flex ">
+
+          <a className="fixed-bottom d-flex flex-row-reverse  " style={{ color: "red" }} href="#"><h1 style={{ fontSize: "60px" }}><strong><i class="fas fa-arrow-up"></i></strong></h1></a>
+
+        </div>
       </div>
     </div>
   );

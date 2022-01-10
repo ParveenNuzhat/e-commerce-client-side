@@ -7,7 +7,7 @@ import "./Slider.css";
 
 const Slider = () => {
   return (
-    <div className="slider-container">
+    <div className="slider-container overflow-hidden">
       <Carousel>
         <Carousel.Item interval={1000}>
           <Row className="align-items-center">
