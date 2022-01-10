@@ -20,8 +20,8 @@ const CosmeticDetails = () => {
         </div>
 
         <div>
-          <div className=" d-flex align-items-center justify-content-center">
-            <div className="col-md-6 col-md-1 cardbox text-center">
+          <div className=" d-md-flex align-items-center justify-content-center">
+            <div className="col-md-6 col-sm-1 cardbox text-center">
               <img
                 src={cosmetics.image}
                 alt=""
@@ -29,7 +29,7 @@ const CosmeticDetails = () => {
               />
             </div>
 
-            <div className="col-md-6 col-md-1 cardbox">
+            <div className="col-md-6 col-sm-1 cardbox">
               <div className="card-body">
                 <h4 className="card-text">{cosmetics.name}</h4>
               </div>

@@ -15,10 +15,7 @@ const FashionDetails = () => {
       <div className="w-75 mx-auto">
         <div>
           <div className="col ">
-            <div
-              //   style={{ backgroundColor: "#D5D6EA" }}
-              className="cardbox d-flex align-items-center justify-content-center"
-            >
+            <div className="cardbox d-md-flex align-items-center justify-content-center">
               <div className="col-md-6 text-center">
                 <img
                   src={fashions.image}

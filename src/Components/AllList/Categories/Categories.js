@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Category from "./Category";
+import "./Categories.css";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -42,6 +43,7 @@ const Categories = () => {
   };
   return (
     <div
+      className="pb-4"
       style={{
         minHeight: "115vh",
         backgroundImage:
@@ -53,7 +55,7 @@ const Categories = () => {
       </h3>
       <div className="mt-5">
         {
-          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 d-flex justify-content-center w-75 mx-auto gy-5 mb-5">
+          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-3 d-flex justify-content-center w-75 mx-auto gy-5 mb-5 categories">
             {categories.map((category) => (
               <Category
                 key={category._id}
