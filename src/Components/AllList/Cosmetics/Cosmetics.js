@@ -51,13 +51,13 @@ const Cosmetics = () => {
           "linear-gradient(to right bottom, #6db6c3, #70a8ba, #739baf, #748ea1, #748192, #6a7585, #616979, #575d6c, #454e60, #334055, #203349, #08263e)",
       }}
     >
-      <div className="d-flex align-items-center">
+      <div className="d-md-flex align-items-center justify-content-center">
         <div className="col-md-6 text-center">
           <h1 style={{ color: "white" }}>BEAUTY OFFERS!</h1>
           <h1 style={{ color: "white" }}>Up to 60% off Sale!</h1>
         </div>
-        <div className="col-md-6">
-          <img src={image} alt="" className="w-75 p-5" />
+        <div className="col-md-6 cosmetics-img">
+          <img src={image} alt="" className="w-75" />
         </div>
       </div>
 

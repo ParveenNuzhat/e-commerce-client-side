@@ -49,7 +49,7 @@ const AddCategory = () => {
       <h1 style={{ color: "white" }} className="my-5 ">
         Add New Category
       </h1>
-      <div className=" mb-5">
+      <div className=" mb-5 ">
         <form className="form" onSubmit={handleCategory}>
           <label className="label" for="name">
             <input

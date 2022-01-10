@@ -6,7 +6,7 @@ import "./Electronic.css";
 const Electronic = (props) => {
   const { _id, name, image, brand, price, feature } = props.electronic;
   const { handleDelete } = props;
-  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth()
+  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth();
 
   useEffect(() => {
     fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
@@ -23,20 +23,20 @@ const Electronic = (props) => {
         setIsLoading(false);
       });
   }, [user?.email]);
+
   return (
     <div className="electronic-container">
-      <div className="d-flex">
+      <div className="d-flex ">
         <div
           style={{ backgroundColor: "rgb(200,235,241)" }}
-          className="col-md-7 cardbox card collection-card border-0"
+          className="col-md-7 col-sm-1 cardbox card collection-card border-0"
         >
-          <div className="text-center">
+          <div className="text-center ">
             <img src={image} alt="" className="collection-img p-3" />
           </div>
 
-          {
-            isAdmin === "admin" &&
-            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3">
+          {isAdmin === "admin" && (
+            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3 e-btn">
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
@@ -66,10 +66,9 @@ const Electronic = (props) => {
                 </button>
               </Link>
             </div>
-          }
-          {isAdmin === "user" &&
-            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3">
-
+          )}
+          {isAdmin === "user" && (
+            <div className="card-footer bg-transparent border-0 d-flex justify-content-between p-3 e-btn">
               <Link
                 style={{ textDecoration: "none" }}
                 className="link d-flex justify-content-center"
@@ -98,11 +97,11 @@ const Electronic = (props) => {
                 </button>
               </Link>
             </div>
-          }
+          )}
         </div>
 
         <div
-          className="col-md-5 card cardbox collection-card border-0 justify-content-center"
+          className="col-md-5 col-sm-1 card cardbox collection-card border-0 justify-content-center"
           style={{ backgroundColor: "rgb(200,235,241)" }}
         >
           <div className="">

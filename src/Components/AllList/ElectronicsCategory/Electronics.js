@@ -51,12 +51,11 @@ const Electronics = () => {
         minHeight: "230vh",
       }}
     >
-      <div className="electronics">
-        {/* <img src={image} alt="" className="w-50 img-fluid" /> */}
-      </div>
-      <div className="mt-5">
+      <div className="electronics"></div>
+
+      <div className="">
         {
-          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2 justify-content-center g-5 mx-auto my-5">
+          <div className="e-ctg row row-cols-1 row-cols-md-2 row-cols-lg-2 justify-content-center g-5 mx-auto my-5">
             {electronics.map((electronic) => (
               <Electronic
                 key={electronic._id}
