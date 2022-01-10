@@ -6,3 +6,9 @@
   height: 350px;
   min-height: 350px;
 } */
+
+@media (max-width: 576px) {
+  .cosmetics-img {
+    text-align: center;
+  }
+}

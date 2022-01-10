@@ -21,3 +21,21 @@
   color: white;
   width: 110px;
 }
+
+@media (max-width: 576px) {
+  .slider-container {
+    display: none;
+  }
+
+  /* .slider {
+    background-image: url("../../Images/11.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 300px;
+  } */
+
+  .slider-img {
+    width: 100%;
+  }
+}

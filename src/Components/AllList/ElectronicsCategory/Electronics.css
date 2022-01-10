@@ -7,6 +7,12 @@
   min-height: 450px;
 }
 
-/* .electronics img {
-  height: 550px;
-} */
+@media (max-width: 576px) {
+  .electronics {
+    background-position: top;
+    background-size: contain;
+    height: 200px;
+    min-height: 200px;
+    margin-top: 15px;
+  }
+}

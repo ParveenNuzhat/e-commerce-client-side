@@ -52,11 +52,11 @@ const Furnitures = () => {
         minHeight: "200vh",
       }}
     >
-      <div className="d-flex align-items-center text-center">
-        <div className="col-md-3 p-5 ms-3">
+      <div className="d-md-flex align-items-center text-center">
+        <div className="col-md-3 p-5 ms-3 sale-msg">
           <h2 style={{ color: "white" }}>Luxurious Furniture</h2>
           <ul
-            className="bullet me-3"
+            className="bullet"
             style={{ fontSize: "20px", fontWeight: "500" }}
           >
             <li>Convenience</li>
@@ -65,11 +65,11 @@ const Furnitures = () => {
           </ul>
         </div>
 
-        <div className="col-md-3 ms-5">
+        <div className="col-md-3 ms-5 sale-img">
           <img src={image1} alt="" className="w-75" />
         </div>
 
-        <div className="col-md-6">
+        <div className="col-md-6 f-banner">
           <img src={image} alt="" className="w-75" />
         </div>
       </div>

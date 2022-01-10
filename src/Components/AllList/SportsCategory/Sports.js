@@ -49,7 +49,7 @@ const Sports = () => {
         overflow: "hidden",
       }}
     >
-      <div className="d-flex align-items-center text-center">
+      <div className="d-md-flex align-items-center text-center">
         <div className="col-md-5 p-5">
           <h1 style={{ color: "white", fontWeight: "900" }}>MEGA SPORTS</h1>
           <h2 style={{ fontWeight: "900", fontSize: "50px", color: "blue" }}>

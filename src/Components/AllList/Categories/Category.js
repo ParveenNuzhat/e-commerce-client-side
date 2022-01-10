@@ -6,11 +6,11 @@ import {
   useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { Container } from "react-bootstrap";
-import useAuth from "../../../Hook/useAuth"
+import useAuth from "../../../Hook/useAuth";
 
 const Category = (props) => {
   const history = useHistory();
-  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth()
+  const { user, isAdmin, setIsAdmin, isLoding, setIsLoading } = useAuth();
 
   const { _id, name, image } = props.category;
   const { handleDelete } = props;
@@ -54,7 +54,6 @@ const Category = (props) => {
     <div className="">
       <Container className="col">
         <div
-          // style={{ backgroundColor: "#D5D6EA" }}
           style={{
             backgroundColor: "rgb(200, 235, 241",
             boxShadow: "5px 5px 10px salmon",
@@ -69,19 +68,16 @@ const Category = (props) => {
               {name}
             </h4>
           </div>
-          <div >
-
-
-
+          <div>
             {isAdmin === "admin" && (
-              <div class="card-footer bg-transparent border-success d-flex justify-content-between">
+              <div class="card-footer bg-transparent border-success d-md-flex justify-content-between border-0">
                 <Link
                   style={{ textDecoration: "none" }}
                   className="link d-flex justify-content-center"
                 >
                   <button
                     onClick={() => handleDelete(_id)}
-                    className="btn btn-danger"
+                    className="btn btn-danger mb-2"
                     style={{ border: "none", backgroundColor: "salmon" }}
                   >
                     <i
@@ -95,22 +91,21 @@ const Category = (props) => {
                   </button>
                 </Link>
 
-
                 <Link
                   style={{ textDecoration: "none" }}
                   className="link d-flex justify-content-center"
                   onClick={handleAllProducts}
                 >
                   <button
-                    className="btn btn-info"
-                    style={{ backgroundColor: "#585858", border: "none" }}
+                    className="btn btn-info mb-2"
+                    style={{ backgroundColor: "#406882", border: "none" }}
                   >
                     <i
                       style={{ color: "red", fontSize: "20px" }}
                       class="fa fa-cart-plus"
                     ></i>
                     <span
-                      className="px-1"
+                      className="px-1 "
                       style={{ color: "white", fontWeight: "bold" }}
                     >
                       COLLECTION
@@ -118,7 +113,6 @@ const Category = (props) => {
                   </button>
                 </Link>
               </div>
-
             )}
             {isAdmin === "user" && (
               <Link
@@ -127,8 +121,8 @@ const Category = (props) => {
                 onClick={handleAllProducts}
               >
                 <button
-                  className="btn btn-info"
-                  style={{ backgroundColor: "#585858", border: "none" }}
+                  className="btn btn-info mb-2"
+                  style={{ backgroundColor: "#406882", border: "none" }}
                 >
 
                   <span

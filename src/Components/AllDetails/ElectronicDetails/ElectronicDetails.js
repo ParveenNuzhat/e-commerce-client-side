@@ -14,7 +14,7 @@ const ElectronicDetails = () => {
 
   return (
     <div style={{ minHeight: "100vh" }} className="detail-container">
-      <div className="w-75 mx-auto">
+      <div className="w-75 mx-auto e-detail">
         <div className="text-center p-5">
           <h1 style={{ color: "salmon" }}>
             Detail Information about {electronics?.name}
@@ -22,12 +22,12 @@ const ElectronicDetails = () => {
         </div>
 
         <div>
-          <div className="d-flex align-items-center justify-content-center">
+          <div className="d-md-flex align-items-center justify-content-center">
             <div className="col-md-6 cardbox text-center">
               <img
                 src={electronics.image}
                 alt=""
-                className="w-100 img-fluid p-5"
+                className="w-100 img-fluid p-5 e-img"
               />
             </div>
 
