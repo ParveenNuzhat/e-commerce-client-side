@@ -45,7 +45,7 @@ const Footer = () => {
                 <h6 className="my-3 footer-header">Contact Us</h6>
                 <p>A: New York City, USA</p>
                 <p>App: Viber, Whatsapp</p>
-                <p>E: royal.motor@gmail.com</p>
+                <p>E: sns_aurora@gmail.com</p>
                 <p>P: +8801711111111</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
         </div>
         <hr />
-        <p className="text-center pt-3">&copy; 2021 All rights reserved.</p>
+        <p className="text-center pt-3">&copy; 2022 All rights reserved.</p>
       </div>
     </div>
   );

@@ -51,7 +51,7 @@ const Fashions = () => {
           "linear-gradient(to right bottom, #6db6c3, #70a8ba, #739baf, #748ea1, #748192, #6a7585, #616979, #575d6c, #454e60, #334055, #203349, #08263e)",
       }}
     >
-      <div className="d-flex align-items-center">
+      <div className="d-md-flex align-items-center">
         <div className="col-md-6 text-center">
           <h1 style={{ color: "white" }}>Sale Offer -50% Off This Week</h1>
           <h1 style={{ color: "white" }}>New Arrivals</h1>

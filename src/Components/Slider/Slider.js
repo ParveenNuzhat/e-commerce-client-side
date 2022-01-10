@@ -7,11 +7,11 @@ import "./Slider.css";
 
 const Slider = () => {
   return (
-    <div className="slider-container">
+    <div className="slider-container slider">
       <Carousel>
         <Carousel.Item interval={1000}>
           <Row className="align-items-center">
-            <Col md={6}>
+            <Col md={6} sm={12}>
               <h2
                 className="slider-text"
                 style={{ fontSize: "45px", fontWeight: "700" }}
@@ -26,7 +26,7 @@ const Slider = () => {
               </h1>
               <Button className="slider-text slider-btn mt-3">Explore</Button>
             </Col>
-            <Col md={6}>
+            <Col md={6} sm={12}>
               <div>
                 <img
                   className="image-fluid slider-img p-5"
